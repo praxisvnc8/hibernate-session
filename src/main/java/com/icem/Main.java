@@ -30,8 +30,10 @@ public class Main {
 
             // Create a new Student object
             System.out.println("Creating new student object...");
-            Student tempStudent = new Student();
-            tempStudent.setName("Eren Jaegar");
+            Student tempStudent = new Student("Levi", "Ackerman", "levi123@aotmail.com");
+//            tempStudent.setFirstname("Eren");
+//            tempStudent.setLastname("Jaegar");
+//            tempStudent.setEmail("eren123@aotmail.com");
 //            tempStudent.setId(101);
 
             // Save the student object
