@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+    <session-factory>
+        <!-- 1. Database Connection Settings -->
+        <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
+        <property name="hibernate.connection.url">${DB_URL}</property>
+        <property name="hibernate.connection.username">${DB_USERNAME}</property>
+        <property name="hibernate.connection.password">${DB_PASSWORD}</property>
+
+        <!-- 2. Hibernate SQL Dialect for PostgreSQL -->
+        <property name="dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+
+        <!-- 3. Connection Pool Settings (Standard for local dev) -->
+        <property name="connection.pool_size">5</property>
+
+        <!-- 4. Automatic Schema Management -->
+        <!-- 'update' creates tables if they don't exist and updates them if they change -->
+        <property name="hbm2ddl.auto">update</property> <!-- Ignore database inspection related to new code changes -->
+
+        <!-- 5. Debugging / Console Output -->
+        <!-- Shows the actual SQL Hibernate generates in your IntelliJ console -->
+        <property name="show_sql">true</property>
+        <property name="format_sql">true</property>
+        <property name="highlight_sql">true</property>
+
+        <!-- 6. Register your Entity Classes here -->
+        <!-- Replace 'com.example.Student' with your actual package and class name -->
+        <mapping class="com.icem.Student"/>
+
+    </session-factory>
+</hibernate-configuration>
